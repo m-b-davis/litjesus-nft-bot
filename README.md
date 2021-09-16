@@ -1,29 +1,28 @@
-# TypeScript Discord Bot Template
-A Discord bot template using discord.js, Commando, and TypeScript. Supports auto-compilation.
+# Lit Jesus NFT Mint Discord Bot
+A Discord bot which prints when NFTs are minted for the LitJesus drop using discord.js, Commando, and TypeScript.
 
-### Features
-- Automatic compilation and restarting with Nodemon. When edits are saved, Nodemon will automatically recompile your code and restart your bot.
-- SQLite database support with Commando's SQLite adapter.
-- A good start for new TypeScript developers, or those needing a quick boilerplate for a speedy deployment.
+Discord: https://discord.com/channels/867442047723372545/
+Twitter: https://twitter.com/thereallitjesus
 
-### Setup
-`ts-discord-bot-template` makes good use of NPM scripts, so make sure you check out the goodies inside `package.json`. Despite this, the only thing
-you need to do to get a debug session started is run `npm run debug` in your favourite shell (in the root directory), and Nodemon will start with the proper configuration.
-Feel free to change the scripts inside `package.json` should you need to change Nodemon, TSC, or NPM's runtime flags.
+Note - I'm not affiliated with the Lit Jesus project. 
 
-1) Click 'Use this template' in the top-right of this repository.
-2) Fill out the name of your new repository, and pick the location.
-3) Clone the repository to your computer.
-4) Make sure TypeScript is installed on your computer. You can do this by running `npm i -g typescript` from your favourite shell.
-5) Install the dependencies. You can do this by running `npm i` from your favourite shell.
-6) Update the configuration inside `config.json` with your Discord bot details, preferred command prefix, and support server invite. The last one is optional.
-7) Start a debug session with `npm run debug`.
-8) Edit to your heart's content, and watch Nodemon automatically recompile and restart your app when changes are detected.
+![image](https://user-images.githubusercontent.com/15704216/133225258-11de9348-34b1-414d-9554-690e62b9c224.png)
 
 
-### Copyright
-**Authorization of Derivative Works**  
-Derivative works, including forks, bots, applications, and services, are **not** subject to any license, restrictions, requirements or specifications. A license is not needed, but a credit might be nice ;)  
-  
-**Protection of Original Assets**  
-Otherwise, this repository and assets are copyright &copy; 2018-2021 Abyssal under the MIT License.
+This was knocked together quickly as a learning exercise on discord bots - please don't judge the code 😂.
+
+## How does it work?
+This bot uses Puppeteer to scrape the mint wallet address page - https://nfteyez.global/accounts/3m4nX9M6Cq2WDjdi57Y6QmaQ8ethgJ1pt58pxKGatGSr. 
+
+We store a counter in counter.json to track the highest number minted - every time we see a result on this page with a higher number we post to discord at the channel ID set in index.ts (`TARGET_CHANNEL_ID`) with the image, link to the wallet and the mint number.
+
+## Setup
+ - Clone repo
+ - `yarn` to install dependencies
+ - Add your token to `config.json`. If you're new to discord bots - see https://www.digitaltrends.com/gaming/how-to-make-a-discord-bot/ to create a bot and then get the token once your bot is created.
+ - `yarn run debug` to launch bot
+
+## Donations
+Feel free to send some SOL if you found this useful `8XfKd4dD2WW6Su6bQUHiqzgsBDag3xczNKS7aFCAKgU8`.
+
+Or even better - go and spend it on buying your own Lit Jesus!
