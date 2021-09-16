@@ -1,5 +1,7 @@
 import fs from 'fs';
+import path from 'path';
 
+const counterPath = path.join(__dirname, '../counter.json');
 export function initialiseCounter() {
   // Create counter file if doesn't exist
   if (!fs.existsSync(counterPath)) {
@@ -10,6 +12,7 @@ export function initialiseCounter() {
 export function getLastCounter(): number {
   const content = fs.readFileSync(counterPath);
   const data = JSON.parse(content.toString());
+  console.log(data);
   return data.value;
 }
 
